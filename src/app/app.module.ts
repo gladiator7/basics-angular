@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 
+import { LoggingService } from './logging.service';
+import { AccountService } from './account.service';
+
+
+// there is hierarchial service instances.ex parent and its child has same instance of service but if we add new instance to provider in a component then new instance is add so lead to new instance and values will be different
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +23,11 @@ import { NewAccountComponent } from './new-account/new-account.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    AccountService,
+    LoggingService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

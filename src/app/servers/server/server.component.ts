@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ServersService } from './servers.service';
+
+import { ServersService } from '../servers.service';
 
 @Component({
-  selector: 'app-servers',
-  templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+  styleUrls: ['./server.component.css']
 })
-export class ServersComponent implements OnInit {
-  private servers: {id: number, name: string, status: string}[] = [];
+export class ServerComponent implements OnInit {
+  server: {id: number, name: string, status: string};
 
   constructor(private serversService: ServersService) { }
 
   ngOnInit() {
-    this.servers = this.serversService.getServers();
+    this.server = this.serversService.getServer(1);
   }
 
 }

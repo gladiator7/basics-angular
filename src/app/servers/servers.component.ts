@@ -20,7 +20,8 @@ onReload(){
 this.router.navigate(['/servers']);
 
 
+// very important technique
 // for relative path 
-//this.router.navigate(['server'], {relativeTo: this.route});
+// this.router.navigate(['server'], {relativeTo: this.route});
 }
 }

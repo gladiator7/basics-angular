@@ -1,28 +1,15 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-			<ul class="nav nav-tabs">
-				<li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-					<a routerLink="/">Home</a>
-				</li>
-				<li role="presentation" routerLinkActive="active">
-					<a routerLink="/servers">Servers</a>
-				</li>
-				<li role="presentation" routerLinkActive="active">
-					<a [routerLink]="['/users']">Users</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/">Home</a>
+      <a [routerLink]="['user', 1]">User 1</a>
+      <a [routerLink]="['user', 2]">User 2</a>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-
-<!-- we will try to use relative path (Relative path "servers", absolute path "/servers")-->
-<!-- Relative path final:- localhost:4200/servers/servers ie appends to the current path -->
-<!-- Absolute path final:- localhost:4200/servers -->
-<!-- ie we specify path as "servers" and not just "/servers" -->
-<!-- other options that we need to explore are :- ./servers  ../servers -->
